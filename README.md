@@ -75,3 +75,16 @@ var app7 = new Vue({
   }
 })
 ```
+
+# Vueインスタンス
+## データ
+[オプション-データ|https://jp.vuejs.org/v2/api/#%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3-%E3%83%87%E3%83%BC%E3%82%BF]
+|  オプション  |  目的  |　型　|
+| ---- | ---- | ---- |
+|  data  |  データオブジェクト  |Object・Function　|
+|  props  |  親コンポーネントからデータを受け取るためにエクスポートされた属性のリスト/ハッシュ  |Object・Array<string> <br>type [String, Number, Boolean, Array, Object, Date, Function, Symbol, カスタムコンストラクタ関数、またはそれらの配列]　<br>default: any プロパティのデフォルト値　<br>required: Boolean　プロパティが必須かどうか　<br> validator: Function プロパティの値を唯一の引数として受け取る、カスタムのバリデーション関数 |
+|  computed  |  動的な算出プロパティ  |{ [key: string]: Function | { get: Function, set: Function } }　|
+|  methods  |  Vue インスタンスに組み込まれるメソッド  |{ [key: string]: Function }　<br> ※アロー関数を使用すべきではないことに注意|
+|  watch  |  キーが監視する評価式で、値が対応するコールバックをもつオブジェクト  |{ [key: string]: string | Function | Object | Array}|
+
+## 
