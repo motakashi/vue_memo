@@ -87,4 +87,9 @@ var app7 = new Vue({
 |  methods  |  Vue インスタンスに組み込まれるメソッド  |{ [key: string]: Function }　<br> ※アロー関数を使用すべきではないことに注意|
 |  watch  |  キーが監視する評価式で、値が対応するコールバックをもつオブジェクト  |{ [key: string]: string | Function | Object | Array}|
 
-## 
+## DOM
+|  オプション  |  目的  |　型　|
+| ---- | ---- | ---- |
+|  el  |  既存の DOM 要素に Vue インスタンスを与えます。CSS セレクタの文字列、実際の HTML 要素をとることができます。<br> new 経由でインスタンス作成のみだけなので注意してください。 |string, Element　|
+|  template  |  Vue インスタンスに対してマークアップとして使用するための、文字列のテンプレートです。  |　string　|
+|  render  | JavaScript による完全なプログラミングパワーを活用するために文字列テンプレートの代替として許可します  |　(createElement: () => VNode) => VNode　|
