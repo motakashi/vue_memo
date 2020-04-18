@@ -39,3 +39,39 @@ var app5 = new Vue({
 |  data  |  初期の値  |
 |  methods  |  呼び出されるメソッド  |
 
+## コンポーネントによる構成
+ - すべてのタイプのインターフェイスはコンポーネントツリーとして抽象化することができる
+ - dataにしてしまうと同じデータになってしまう。なので、プロパティに値を渡して、受け取れるようにする
+```
+<div id="app-7">
+  <ol>
+    <!-- 
+      各 todo-item の内容を表す todo オブジェクトを与えます。
+      これにより内容は動的に変化します。
+      また後述する "key" を各コンポーネントに提供する必要があります。
+    -->
+    <todo-item
+      v-for="item in groceryList"
+      v-bind:todo="item"
+      v-bind:key="item.id"
+    ></todo-item>
+  </ol>
+</div>
+```
+```
+Vue.component('todo-item', {
+  props: ['todo'],
+  template: '<li>{{ todo.text }}</li>'
+})
+
+var app7 = new Vue({
+  el: '#app-7',
+  data: {
+    groceryList: [
+      { id: 0, text: 'Vegetables' },
+      { id: 1, text: 'Cheese' },
+      { id: 2, text: 'Whatever else humans are supposed to eat' }
+    ]
+  }
+})
+```
